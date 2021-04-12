@@ -1,14 +1,12 @@
 rm(list=ls()) 
 
-setwd("C:/Users/NP/Nextcloud/R_und_rtrim/ornitho_rare_telegram")
-
 library(telegram.bot)
 library(rvest)
 library(xml2)
 
 #### Building an R Bot in 3 steps ----
 # 1. Creating the Updater object
-updater <- Updater(token = bot_token("RTelegramBot"))
+updater <- Updater(token = Sys.getenv("RTELEGRAMBOT_TOKEN"))
 
 bot <- updater[["bot"]]
 
@@ -20,8 +18,7 @@ updates <- bot$getUpdates()
 
 # Retrieve your chat id
 # Note: you should text the bot before calling `getUpdates`
-#chat_id <- updates[[1L]]$from_chat_id() #1 für bot 2 für gruppenchat
-chat_id <- 92150075
+chat_id <- Sys.getenv("CHAT_ID")
 
 #### scrap rare observation ----
 impfzentrumMSpage <- "https://impfzentrum-bbi-stadt-muenster.ticket.io/?onlyTag=erstimpfung"
