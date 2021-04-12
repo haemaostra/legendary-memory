@@ -31,7 +31,7 @@ txt_obs <- impfzentrumMS %>%
   xml2::xml_find_all("//p[contains(@class, 'lead text-muted')]") %>% 
   rvest::html_text()
 
-txt_obs_old <- "There are no active events at the moment."
+txt_obs_old <- "There are no active events at the moment"
 
 txt_update <- "NEUE TERMINE IMPFZENTRUM"
 
