@@ -1,8 +1,7 @@
 name: impfungMS
 
 on:
-  schedule:
-    - cron: '0,30 * * * *'  # At minute 0 past every hour from 6 through 20.
+  workflow_dispatch:
 
 jobs:
   ornitho_very_rare_telegram-post:
