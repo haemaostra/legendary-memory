@@ -10,6 +10,7 @@ jobs:
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       RTELEGRAMBOT_TOKEN: ${{ secrets.RTELEGRAMBOT_TOKEN }}
+      CHAT_ID: ${{ secrets.CHAT_ID }}
       
     steps:
       - uses: actions/checkout@v2
